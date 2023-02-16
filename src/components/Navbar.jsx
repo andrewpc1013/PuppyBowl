@@ -1,9 +1,36 @@
-import React from "react";
+import React, {useState} from "react";
 
 const Navbar = () => {
+  const [name, setName] = useState('')
+  const [breed, setBreed] = useState('')
+
+  async function sendInfo(name,breed){
+    try {
+      setName('')
+      setBreed('')
+    } catch (error) {
+      console.err(error)
+    }
+  }
+
   return (
     <div id="navbar">
-      <h2> I am navbar</h2>
+      <form method="post" onSubmit={(event)=>{
+        event.preventDefault()
+        console.log(name,breed)
+        sendInfo(name,breed)
+      }}>
+        <label>Name:
+          <input type='text' id="name" value={name} onChange={(event)=>{
+            setName(event.target.value)
+          }}/>
+        </label>
+        <label>Breed:</label>
+        <input type="text" id="breed" value={breed} onChange={(event)=>{
+          setBreed(event.target.value)
+        }}/>
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 };
