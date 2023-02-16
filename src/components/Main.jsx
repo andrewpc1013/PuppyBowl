@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Navbar, CardList } from "./";
+import { Navbar, CardList, PlayerDetails } from "./";
 import { fetchAllPlayers } from "../api-adapters";
 
 const Main = () => {
@@ -14,6 +14,7 @@ const Main = () => {
             console.log(error)
         }
     } 
+
     useEffect(()=>{
         getAllPlayers()
     },[])
@@ -21,7 +22,13 @@ const Main = () => {
     return(
         <div id="main">
             <Navbar />
-            <CardList playersArr={playersArr}/>
+            <div id="container">
+                {
+                    true ?
+                    <PlayerDetails /> :
+                    <CardList playersArr={playersArr}/> 
+                }
+            </div>
         </div>
     )
 }

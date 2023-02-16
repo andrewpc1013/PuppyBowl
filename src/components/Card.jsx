@@ -2,6 +2,7 @@ import React, {useState} from "react";
 
 const Card = (props) => {
     const cardInfo = props.cardInfo;
+    const [singleID, setSingleID] = useState("");
 
     return (
         <div id="card">
@@ -13,7 +14,9 @@ const Card = (props) => {
                 <img src={cardInfo.imageUrl} id="puppy-picture"/>
             </div>
             <div id="card-footer">
-                <button>See Details</button>
+                <button onClick={() => {
+                    setSingleID(cardInfo.id);
+                }}>See Details</button>
                 <button>Delete from Roster</button>
             </div>
         </div>
