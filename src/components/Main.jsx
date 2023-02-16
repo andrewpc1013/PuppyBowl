@@ -1,10 +1,11 @@
 import React from "react";
-import { Navbar } from "./";
+import { Navbar, CardList } from "./";
 
 const Main = () => {
     return(
         <div id="main">
             <Navbar />
+            <CardList />
         </div>
     )
 }
