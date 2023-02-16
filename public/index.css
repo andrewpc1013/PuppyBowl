@@ -11,18 +11,51 @@ body {
     max-height: 10%;
     min-height: 40px;
 }
-
-#puppy-picture {
-    height: 40px;
-    width: 40px;
-}
-
-#card {
-    display: flex;
-    justify-content: space-evenly;
-}
-
 #card-list {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
+}
+#card {
+    display: flex;
+    flex-basis: 200px;
+    margin: 5px 10px;
+    flex-direction: column;
+    height: 40%;
+    width: 10%;
+    padding: 5px;
+    box-shadow: 0 2px 5px -2px black;
+}
+
+#card-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0;
+}    
+#card-header h5{
+    margin: 10px;
+}
+.puppy-name{
+    font-size: larger;
+}
+.puppy-id{
+    font-style: italic;
+}
+
+#puppy-picture {
+    border-radius: 10px;
+    width: 150px;
+    height: 250px;
+    align-self: center;
+    flex: 1;
+}
+#card-footer{
+    display: flex;
+    flex: 0;
+    flex-direction: column;
+    width: 100%;
+}
+#images{
+    display: flex;
 }
