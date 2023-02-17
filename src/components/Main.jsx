@@ -1,33 +1,30 @@
 import React, {useState, useEffect} from "react";
 import { Navbar, CardList, PlayerDetails } from "./";
 import { fetchAllPlayers } from "../api-adapters";
+import { Outlet } from "react-router";
 
 const Main = () => {
-    const [playersArr, setPlayersArr] = useState([])
+    // const [playersArr, setPlayersArr] = useState([])
     
-    async function getAllPlayers(){
-        try {
-            const data = await fetchAllPlayers()
-            setPlayersArr(data)
+    // async function getAllPlayers(){
+    //     try {
+    //         const data = await fetchAllPlayers()
+    //         setPlayersArr(data)
             
-        } catch (error) {
-            console.log(error)
-        }
-    } 
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    // } 
 
-    useEffect(()=>{
-        getAllPlayers()
-    },[])
+    // useEffect(()=>{
+    //     getAllPlayers()
+    // },[])
     
     return(
         <div id="main">
             <Navbar />
             <div id="container">
-                {
-                    true ?
-                    <PlayerDetails /> :
-                    <CardList playersArr={playersArr}/> 
-                }
+                {/* <CardList playersArr={playersArr} /> */}
             </div>
         </div>
     )

@@ -1,8 +1,11 @@
 import React, {useState} from "react";
+import {FetchSinglePlayer} from "../api-adapters/";
+import PlayerDetails from "./PlayerDetails";
+import { Outlet, Link } from "react-router-dom";
 
 const Card = (props) => {
     const cardInfo = props.cardInfo;
-    const [singleID, setSingleID] = useState("");
+
 
     return (
         <div id="card">
@@ -15,9 +18,10 @@ const Card = (props) => {
             </div>
             <div id="card-footer">
                 <button onClick={() => {
-                    setSingleID(cardInfo.id);
+                    // FetchSinglePlayer(cardInfo.id)
+                    <Outlet />
+                    
                 }}>See Details</button>
-                <button>Delete from Roster</button>
             </div>
         </div>
     )

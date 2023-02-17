@@ -1,4 +1,4 @@
-export const fetchAllPlayers = async ()=>{
+const fetchAllPlayers = async ()=>{
     const BASE_URL = 'https://fsa-puppy-bowl.herokuapp.com/api/2301-ftb-et-web-ft/players'
 
     try {
@@ -9,3 +9,5 @@ export const fetchAllPlayers = async ()=>{
         console.log(error)
     }
 }
+
+export default fetchAllPlayers

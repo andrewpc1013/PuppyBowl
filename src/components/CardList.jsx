@@ -1,13 +1,26 @@
 import React, {useEffect, useState} from "react";
 import Card from "./Card";
+import { fetchAllPlayers } from "../api-adapters";
 
 const CardList = (props) => {
-    const [testArray, setTestArray] = useState([]);
-    const playersArr = props.playersArr
-    console.log(playersArr)
-    useEffect(() => {
-        setTestArray([{name: "Kenny", breed: "bulldog", status: "field", imageURL: "http://cdn.akc.org/content/hero/puppy_pictures_header.jpg", id: "#1111"}, {name: "Gina", breed: "poodle", status: "bench", imageURL: "http://cdn.akc.org/content/hero/puppy_pictures_header.jpg", id: "#5555"}]);
-    }, []);
+    // const [testArray, setTestArray] = useState([]);
+    // const playersArr = props.playersArr
+    const [playersArr, setPlayersArr] = useState([])
+    
+    async function getAllPlayers(){
+        try {
+            const data = await fetchAllPlayers()
+            setPlayersArr(data)
+            
+        } catch (error) {
+            console.log(error)
+        }
+    } 
+
+    useEffect(()=>{
+        getAllPlayers()
+        console.log('test')
+    },[])
 
     return (
         <div id="card-list">
