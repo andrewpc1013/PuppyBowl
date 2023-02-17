@@ -1,11 +1,8 @@
-import React, {useState} from "react";
-import {FetchSinglePlayer} from "../api-adapters/";
-import PlayerDetails from "./PlayerDetails";
-import { Outlet, Link } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Card = (props) => {
     const cardInfo = props.cardInfo;
-
 
     return (
         <div id="card">

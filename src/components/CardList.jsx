@@ -1,6 +1,5 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import Card from "./Card";
-import { fetchAllPlayers } from "../api-adapters";
 
 const CardList = (props) => {
     const playersArr = props.playersArr
@@ -11,13 +10,12 @@ const CardList = (props) => {
         <div id="card-list">
             {   
                 playersArr.map(cardInfo => {
-                    if(name === '' && breed === ''){
-                        return <Card cardInfo={cardInfo} key={cardInfo.id}/>
-                    }else if(cardInfo.name.toLowerCase().includes(name.toLowerCase()) && breed === ''){
-                        return <Card cardInfo={cardInfo} key={cardInfo.id}/>
-                    }else if(name === '' && cardInfo.breed.toLowerCase().includes(breed.toLowerCase())){
-                        return <Card cardInfo={cardInfo} key={cardInfo.id}/>
-                    }else if(cardInfo.name.toLowerCase().includes(name.toLowerCase()) && cardInfo.breed.toLowerCase().includes(breed.toLowerCase())){
+                    const searchName = name.toLowerCase();
+                    const searchBreed = breed.toLowerCase();
+                    const cardName = cardInfo.name.toLowerCase();
+                    const cardBreed = cardInfo.breed.toLowerCase();
+
+                    if(cardName.includes(searchName) && cardBreed.includes(searchBreed)){
                         return <Card cardInfo={cardInfo} key={cardInfo.id}/>
                     }
                 })
