@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { Navbar, CardList, PlayerDetails } from "./";
 import { fetchAllPlayers } from "../api-adapters";
-import { Outlet } from "react-router";
+import { Outlet } from "react-router-dom";
 
 const Main = () => {
     // const [playersArr, setPlayersArr] = useState([])
@@ -25,6 +25,7 @@ const Main = () => {
             <Navbar />
             <div id="container">
                 {/* <CardList playersArr={playersArr} /> */}
+                <Outlet />
             </div>
         </div>
     )

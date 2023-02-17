@@ -59,3 +59,12 @@ body {
 #images{
     display: flex;
 }
+
+.player-detail {
+    /* display: flex; */
+}
+
+.player-detail span {
+    font-size: smaller;
+    font-weight: normal;
+}

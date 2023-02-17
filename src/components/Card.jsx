@@ -17,11 +17,7 @@ const Card = (props) => {
                 <img src={cardInfo.imageUrl} id="puppy-picture"/>
             </div>
             <div id="card-footer">
-                <button onClick={() => {
-                    // FetchSinglePlayer(cardInfo.id)
-                    <Outlet />
-                    
-                }}>See Details</button>
+                <Link to={`/player/${cardInfo.id}`}><button>See Details</button></Link>
             </div>
         </div>
     )

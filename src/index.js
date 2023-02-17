@@ -13,9 +13,7 @@ const router = createBrowserRouter(
         <>
             <Route path="/" element={<Main/>}>
                 <Route index element={<CardList/>}/>
-                {/* <Route path="players">
-                    <Route path=":id" element={<PlayerDetails/>}/>
-                </Route> */}
+                <Route path="/player/:id" element={<PlayerDetails/>}/>
             </Route>
         </>
     )
