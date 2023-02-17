@@ -5,6 +5,7 @@ import { fetchAllPlayers } from "../api-adapters";
 const CardList = (props) => {
     // const [testArray, setTestArray] = useState([]);
     // const playersArr = props.playersArr
+    // console.log(playersArr)
     const [playersArr, setPlayersArr] = useState([])
     
     async function getAllPlayers(){
@@ -19,7 +20,6 @@ const CardList = (props) => {
 
     useEffect(()=>{
         getAllPlayers()
-        console.log('test')
     },[])
 
     return (

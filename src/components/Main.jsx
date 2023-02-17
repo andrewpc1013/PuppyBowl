@@ -4,25 +4,25 @@ import { fetchAllPlayers } from "../api-adapters";
 import { Outlet } from "react-router-dom";
 
 const Main = () => {
-    // const [playersArr, setPlayersArr] = useState([])
+    const [playersArr, setPlayersArr] = useState([])
     
-    // async function getAllPlayers(){
-    //     try {
-    //         const data = await fetchAllPlayers()
-    //         setPlayersArr(data)
+    async function getAllPlayers(){
+        try {
+            const data = await fetchAllPlayers()
+            setPlayersArr(data)
             
-    //     } catch (error) {
-    //         console.log(error)
-    //     }
-    // } 
+        } catch (error) {
+            console.log(error)
+        }
+    } 
 
-    // useEffect(()=>{
-    //     getAllPlayers()
-    // },[])
+    useEffect(()=>{
+        getAllPlayers()
+    },[])
     
     return(
         <div id="main">
-            <Navbar />
+            <Navbar playersArr={playersArr}/>
             <div id="container">
                 {/* <CardList playersArr={playersArr} /> */}
                 <Outlet />

@@ -1,8 +1,10 @@
 import React, {useState} from "react";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const playersArr = props.playersArr
   const [name, setName] = useState('')
   const [breed, setBreed] = useState('')
+  console.log(playersArr)
 
   async function sendInfo(name,breed){
     try {
