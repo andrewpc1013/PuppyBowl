@@ -2,9 +2,10 @@ import React, {useState} from "react";
 
 const Navbar = (props) => {
   const playersArr = props.playersArr
-  const [name, setName] = useState('')
-  const [breed, setBreed] = useState('')
-  console.log(playersArr)
+  const name = props.name
+  const setName = props.setName
+  const breed = props.breed
+  const setBreed = props.setBreed
 
   async function sendInfo(name,breed){
     try {
@@ -19,7 +20,6 @@ const Navbar = (props) => {
     <div id="navbar">
       <form method="post" onSubmit={(event)=>{
         event.preventDefault()
-        console.log(name,breed)
         sendInfo(name,breed)
       }}>
         <label>Name:
